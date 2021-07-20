@@ -5,3 +5,7 @@
     -expo install expo-constants  ///check variables libray
     -import constants in app.js
     -import { FontAwesome5, FontAwesome} from '@expo/vector-icons' /// sick icon  libray and more
+
+
+
+// randomuser.me ----------api
