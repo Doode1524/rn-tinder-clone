@@ -29,13 +29,31 @@ export default function App() {
     fetchUsers();
   }, []);
 
+  function handleLike() {
+    nextUser();
+  }
+
+  function nextUser() {
+    const nextIndex = users.length - 2 == currentIndex ? 0 : currentIndex + 1;
+    setCurrentIndex(nextIndex);
+  }
+
   return (
     <View style={styles.container}>
       <TopBar />
       <View style={styles.swipes}>
-        {users.length > 1 && (
-          <Swipes currentIndex={currentIndex} users={users}></Swipes>
-        )}
+        {users.length > 1 &&
+          users.map(
+            (u, i) =>
+              currentIndex === i && (
+                <Swipes
+                  key={i}
+                  handleLike={handleLike}
+                  currentIndex={currentIndex}
+                  users={users}
+                ></Swipes>
+              )
+          )}
       </View>
       <BottomBar />
     </View>
