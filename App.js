@@ -33,6 +33,11 @@ export default function App() {
     nextUser();
   }
 
+  function handlePass() {
+    nextUser()
+
+  }
+
   function nextUser() {
     const nextIndex = users.length - 2 == currentIndex ? 0 : currentIndex + 1;
     setCurrentIndex(nextIndex);
@@ -49,6 +54,7 @@ export default function App() {
                 <Swipes
                   key={i}
                   handleLike={handleLike}
+                  handlePass={handlePass}
                   currentIndex={currentIndex}
                   users={users}
                 ></Swipes>
