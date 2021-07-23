@@ -5,6 +5,7 @@ import TopBar from "./components/TopBar";
 import axios from "axios";
 import SwipeableImage from "./components/SwipeableImage";
 import BottomBar from "./components/BottomBar";
+import Swipes from "./components/Swipes";
 
 export default function App() {
   const [users, setUsers] = useState([]);
@@ -28,12 +29,14 @@ export default function App() {
     fetchUsers();
   }, []);
 
-
   return (
     <View style={styles.container}>
       <TopBar />
       <View style={styles.swipes}>
-        {users.length > 1 && <SwipeableImage user={users[currentIndex]}/>}</View>
+        {users.length > 1 && (
+          <Swipes currentIndex={currentIndex} users={users}></Swipes>
+        )}
+      </View>
       <BottomBar />
     </View>
   );
