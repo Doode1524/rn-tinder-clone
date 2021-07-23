@@ -32,7 +32,7 @@ export default function App() {
     <View style={styles.container}>
       <TopBar />
       <View style={styles.swipes}>
-        {users.length > 1 && <SwipeableImage user={users[0]}/>}</View>
+        {users.length > 1 && <SwipeableImage user={users[currentIndex]}/>}</View>
       
     </View>
   );
