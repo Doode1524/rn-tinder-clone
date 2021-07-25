@@ -10,7 +10,7 @@ import Swipes from "./components/Swipes";
 export default function App() {
   const [users, setUsers] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const swipesRef = useRef(null)
+  const swipesRef = useRef(null);
 
   async function fetchUsers() {
     try {
@@ -44,11 +44,11 @@ export default function App() {
   }
 
   function handleLikePress() {
-    swipesRef.current.openLeft()
+    swipesRef.current.openLeft();
   }
 
   function handlePassPress() {
-    swipesRef.current.openRight()
+    swipesRef.current.openRight();
   }
 
   return (
